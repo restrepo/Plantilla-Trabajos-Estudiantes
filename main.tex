@@ -17,7 +17,7 @@
 \author{Diego Restrepo\footnote{\href{mailto:restrepo@udea.edu.co}{restrepo@udea.edu.co}}\\
 \textit{\small  Instituto de Física, Universidad de Antioquia}
 }
-\date{\small Octubre 13, 2017}
+\date{\small Julio 11, 2019}
 \begin{document}
 \lstset{language=[LaTeX]TeX
 %,showspaces=false
@@ -50,7 +50,7 @@ Los documentos científicos están diseñados pensando más en un documento de t
 
 En el párrafo anterior se ha forzado que la última palabra antes del punto aparte quede justo al final de la línea para maximizar el efecto de la sangría, la  cual consiste en unos espacios en blanco justo antes del comienzo del nuevo párrafo. La separación de párrafos en LaTeX ocurre de forma natural simplemente dejando una línea en blanco entre ellos. 
 
-Como recomendación general, ya sea que se use un procesador de palabras o un editor de texto plano, se debe evitar forzar el formato. Por ejemplo, si va a escribir el título de una sección numerada, debe evitar poner manualmente los atributos del texto como números, el formato en negrilla, o el tamaño de la letra. Si se esta en un procesador de texto debe usar las definiciones de estilo apropiadas, mientras que si esta trabajando en un editor de texto plano, debe usar los comandos de estructura del programa específico de generación del documento formateado. En el último caso se recomienda, siempre que sea posible, usar los comandos de estilo en lugar de los comandos de formateo del texto:
+Como recomendación general, ya sea que se use un procesador de palabras o un editor de texto plano, se debe evitar forzar el formato. Por ejemplo, si se va a escribir el título de una sección numerada, se debe evitar poner manualmente los atributos del texto como números, el formato en negrilla, o el tamaño de la letra. Si se esta en un procesador de texto, se deben usar las definiciones de estilo apropiadas, mientras que si se esta trabajando en un editor de texto plano, se deben usar los comandos de estructura del programa específico de generación del documento formateado. En el último caso se recomienda, siempre que sea posible, usar los comandos de estilo en lugar de los comandos de formateo del texto:
 
 Es así como en \LaTeX{} podemos establecer una sección de un documento tipo artículo como:
 \begin{lstlisting}
@@ -81,6 +81,12 @@ A continuación se establecen algunas de las ventajas de la estructuración de d
   \item   Apoyado por un adecuado sistema de representación, mejora la calidad final de los documentos y unifica el uso de las convenciones de estilo de cada idioma y área de conocimiento.
   \item   Gracias al riguroso diseño también se facilita la automatización del proceso y el intercambio de documentos por medios informáticos. 
   \end{itemize}
+  
+Para una correcta interpretación de los comandos y macros de \LaTeX{} en español, se recomienda usar el paquete \verb|babel| con las opción \verb|spanish| que incluye las reglas en español para partir automáticamente las palabras al final de la línea si llega a ser necesario. Sí  además el documento se va a procesar con \verb|pdfLaTeX|\footnote{Note que este documento esta configurado para ser procesado con  \texttt{XeLaTeX}}, se debe usar el paquete \verb|inputenc| con la opción \verb|utf8| para poder escribir los acentos de la forma usual, por ejemplo: mamá, sin tener que usar comandos de acentos como \verb|\'a| en \verb|mam\'a|. Entonces el preambulo debería contener las líneas
+\begin{lstlisting}
+\usepackage[spanish]{babel}
+%\usepackage[utf8]{inputenc} %uncomment to use pdfLaTeX
+\end{lstlisting}
   
 \section{Escritura de textos científicos}  
 Hay varios aspectos a tener en cuenta a la hora de escribir textos científicos. La recomendación principal es escribir ideas cortas (de no más de dos o tres líneas) separadas de puntos seguidos. Otra recomendación importante es no intentar forzar el formato del documento, permitiendo que \LaTeX\ haga su trabajo.
@@ -143,7 +149,7 @@ líneas\footnote{\texttt{align} funciona para todo tipo de ecuaciones centradas 
 Ver un tutorial de AMS-\LaTeX\ para los detalles correspondientes. Para \emph{cualquier} expresión matemática se debe encerrar  \emph{siempre} la expresión matemática entre símbolos de \verb|$...$|.
 Esto se debe hacer incluso en el caso de variables de una sóla letra, tipo $a$ o $x$. Es decir, usando: \verb|$a$| o \verb|$x$|.
 
-Para usar modo texto dentro de modo matemático se recomienda el uso del comando \verb|\text{...}|. En particular, ¡las unidades siempre deben ir en modo texto!. Por ejemplo $1\ \text{s}$, que se obtiene con \verb|$1\ \text{s}$|. Note que la unidad está separada de la cantidad con un espacio en blanco: '\verb|\ |'. Cualquier palabra o acrónimo dentro de una ecuación debe ir en formato texto. Por ejemplo, el área de la Iglesis de Jericó (IJ) se podría denotar con $A_{\text{IJ}}$: \verb|A_{\text{IJ}}|, mientras que $A_{IJ}$: \verb|A_{IJ}|, podría ser una matriz con índices $I$ y $J$.
+Para usar modo texto dentro de modo matemático se recomienda el uso del comando \verb|\text{...}|. En particular, ¡las unidades siempre deben ir en modo texto!. Por ejemplo $1\ \text{s}$, que se obtiene con \verb|$1\ \text{s}$|. Note que la unidad está separada de la cantidad con un espacio en blanco: '\verb|\ |'. Cualquier palabra o acrónimo dentro de una ecuación debe ir en formato texto. Por ejemplo, el área de la Iglesia de Jericó (IJ) se podría denotar con $A_{\text{IJ}}$: \verb|A_{\text{IJ}}|, mientras que $A_{IJ}$: \verb|A_{IJ}|, podría ser una matriz con componentes $I$ y $J$.
 
 Finalmente, los nombres de las funciones deben ir siempre en modo texto y con el espacio adecuado después del nombre de la función. Esto se consigue automáticamente usando los macros de funciones de \LaTeX\ del tipo: \verb|\sin|, \verb|\cos|, \verb|\exp|, etc. Por ejemplo $x=\exp(\log(x))$  que se consigue con \verb|$x=\exp(\log(x))$|. Si una función no tiene un macro de \LaTeX{} asociado, se puede usar el comando genérico \verb|\operatorname|, como en  $x=\operatorname{e}^{\log x}$: \verb|$x=\operatorname{e}^{\log x}$|.
 
@@ -201,7 +207,7 @@ $ pdflatex documento
 Estos comandos son realizados automáticamente en las plataformas de \LaTeX\ online como Overleaf. 
 Es de anotar que el documento creado con extensión \verb|.bbl| contiene toda la información de las referencias usadas en el documento y es el usualmente requerido por las revistas para su proceso interno de edición. Esto se debe a que la base de datos  bibliográfica (\verb|susy.bib| en nuestro caso)  puede ser reutilizada en otros documentos y por lo tanto termina teniendo muchas más referencias de las que realmente se necesitan en el documento específico.
 
-De este modo, una referencias del tipo: \verb|\cite{Bernal:2015bla}|, cuyo rótulo \verb|Bernal:2015bla| está definido en el archivo \verb|susy.bib|, aparece en el texto de la siguiente manera: \cite{Bernal:2015bla}. Además se genera una sección adicional del documento con la descripción de la referencia correspondiente. Es altamente recomendable obtener las referencias bibliográficas (BibTeX en este caso) desde algún sistema de manejo de referencias para facilitar el proceso de extracción automático de referencias por parte de terceros. En nuestro caso la referencia la obtuvimos desde \href{http://inspirehep.net/record/1338091/export/hx}{\texttt{http://inspire.hep}}. Una vez allí copiamos y pegamos el texto correspondiente:
+De este modo, una referencia del tipo: \verb|\cite{Bernal:2015bla}|, cuyo rótulo \verb|Bernal:2015bla| está definido en el archivo \verb|susy.bib|, aparece en el texto de la siguiente manera: \cite{Bernal:2015bla}. Además se genera una sección adicional del documento con la descripción de la referencia correspondiente. Es altamente recomendable obtener las referencias bibliográficas (BibTeX en este caso) desde algún sistema de manejo de referencias para facilitar el proceso de extracción automático de referencias por parte de terceros. En nuestro caso la referencia la obtuvimos desde \href{http://inspirehep.net/record/1338091/export/hx}{\texttt{http://inspire.hep}}. Una vez allí copiamos y pegamos el texto correspondiente:
 \begin{footnotesize}
 \begin{lstlisting}
 @article{Bernal:2015bla,
