@@ -40,13 +40,13 @@
 
 \begin{abstract}
 En la edición de textos de documentos que requieran algún formato
-especial, siempre se recomiendo enfocarse en el contenido de los textos y
+especial, siempre se recomienda enfocarse en el contenido de los textos y
 dejar que el formato se realice de forma automática. \LaTeX{} esta especialmente diseñado para ese fin, aún en el caso de textos sin matemáticas.
 \end{abstract}
 \section{Aclaración}
-Una vez recibido este documento por favor cree una copia del mismo para futura referencia y trabaje directamente sobre este documento borrando todos los contenidos del mismo. Esto con el fin de poder activar el sistema automático de revisión que requiere una cuenta especial desde la cual el presente documento fue creado. 
+Una vez recibido este documento por favor cree una copia del mismo para futura referencia y trabaje directamente sobre éste, borrando todos los contenidos del mismo. Esto con el fin de poder activar el sistema automático de revisión que requiere una cuenta especial desde la cual el presente documento fue creado. 
 \section{Documentos estructurados}
-Los documentos científicos están diseñados pensando más en un documento de tipo impreso que en una página web. La principal diferencia en este aspecto es la optimización del uso y el espacio del papel para garantizar una lectura cómoda. Los algoritmos de \LaTeX{} están optimizados para este tipo de usos. Las letras y palabras de distribuyen de la forma más óptima posible tanto horizontal como verticalmente. Una técnica básica de los documentos impresos que chocan frontalmente con los documentos electrónicos es la separación de los párrafos. En los documentos escritos la única separación entre los párrafos es la sangría al comienzo de la línea que indica la diferencia entre un punto seguido, como el punto inmediatamente anterior en esté párrafo, del siguiente punto y aparte:  $\cdots$ \hfill éste es un punto aparte.
+Los documentos científicos están diseñados pensando más en un documento de tipo impreso que en una página web. La principal diferencia en este aspecto es la optimización del uso y el espacio del papel para garantizar una lectura cómoda. Los algoritmos de \LaTeX{} están optimizados para este tipo de documentos. Las letras y palabras se distribuyen de la forma más óptima posible tanto horizontal como verticalmente. Una técnica básica de los documentos impresos que choca frontalmente con los documentos electrónicos es la separación entre los párrafos. En los documentos escritos la única separación entre los párrafos es la sangría al comienzo de la línea que indica la diferencia entre un punto seguido, como el punto inmediatamente anterior en esté párrafo, del siguiente punto y aparte:  $\cdots$ \hfill éste es un punto aparte.
 
 En el párrafo anterior se ha forzado que la última palabra antes del punto aparte quede justo al final de la línea para maximizar el efecto de la sangría, la  cual consiste en unos espacios en blanco justo antes del comienzo del nuevo párrafo. La separación de párrafos en LaTeX ocurre de forma natural simplemente dejando una línea en blanco entre ellos. 
 
@@ -85,7 +85,7 @@ A continuación se establecen algunas de las ventajas de la estructuración de d
 \section{Escritura de textos científicos}  
 Hay varios aspectos a tener en cuenta a la hora de escribir textos científicos. La recomendación principal es escribir ideas cortas (de no más de dos o tres líneas) separadas de puntos seguidos. Otra recomendación importante es no intentar forzar el formato del documento, permitiendo que \LaTeX\ haga su trabajo.
 
-En particular los párrafos deben quedar separados por un punto aparte y continuación una sangría.%, es decir unos espacios en blanco antes de la nueva línea. 
+En particular los párrafos deben quedar separados por un punto aparte y a continuación una sangría. %, es decir unos espacios en blanco antes de la nueva línea. 
 Esto se consigue en \LaTeX\ automáticamente al separar los párrafos con una o más líneas. El uso del comando de ruptura de línea: \verb|\\|, debe evitarse a toda costa, y sólo debe usarse en los casos realmente necesarios.  
 
 
@@ -116,13 +116,13 @@ Y este es un nuevo párrafo.
 Note que no hay líneas en blanco ni antes del \verb|\begin{equation}|, ni después del \verb|\end{equation}|. Si la ecuación termina en un punto aparte, entonces se debe dejar una línea en blanco después del \verb|\end{equation}| para iniciar el nuevo párrafo:
 
 \begin{lstlisting}
-Este  párrafo termina con la siguiente ecuación
+Este  p\'arrafo termina con la siguiente ecuaci\'on
 \begin{equation}
   \label{eq:bin}
   x^2-y^2=(x-y)(x+y).
 \end{equation}
 
-Y este es un nuevo párrafo.
+Y este es un nuevo p\'arrafo.
 \end{lstlisting}
 El resultado es:
 
@@ -134,46 +134,45 @@ Este  párrafo termina con la siguiente ecuación
 
 Y este es un nuevo párrafo. 
 
-La referencia a una ecuación siempre se debe hacer usando el sistema de refencias cruzadas de \LaTeX{}. A la ecuación a referenciar se le debe asignar un rótulo usando el comando \verb|\label| ilustrado en la ecuación anterior. Para referirse a ella dentro del texto se usa el comando \verb|\eqref| con el correspondiente rótulo asignado, que da lugar a la ecuación~\eqref{eq:bin}, obtenida con \verb|\eqref{eq:bin}|. Se recomiendo siempre poner un identificador al rótulo, en el caso anterior es \verb|eq:|, el cual indica un rótulo de ecuación.
+La referencia a una ecuación siempre se debe hacer usando el sistema de refencias cruzadas de \LaTeX{}. A la ecuación a referenciar se le debe asignar un rótulo usando el comando \verb|\label| ilustrado en la ecuación anterior. Para referirse a ella dentro del texto se usa el comando \verb|\eqref| con el correspondiente rótulo asignado, que da lugar a la ecuación~\eqref{eq:bin}, obtenida con \verb|\eqref{eq:bin}|. Se recomienda siempre poner un identificador al rótulo, en el caso anterior es ``\verb|eq:|'', el cual indica un rótulo de ecuación.
 
 \subsection{Modo texto y modo matemático}
 
-El modo texto y el modo matemático usan diferentes estilos de texto para facilitar la lectura y evitar confusiones. Esto se consigue automáticamente en \LaTeX\ usando siempre los ambientes de ecuaciones centradas tipo \verb|equation| para ecuaciones de una sola línea, o \verb|align| para ecuaciones de varías líneas. 
-\footnote{\texttt{align} funciona para todo tipo de ecuaciones centradas y por consiguiente reemplaza el uso de \texttt{equation}. }
+El modo texto y el modo matemático usan diferentes estilos de fuentes de caracteres para facilitar la lectura y evitar confusiones. Esto se consigue automáticamente en \LaTeX\ usando siempre los ambientes de ecuaciones centradas tipo \verb|equation| para ecuaciones de una sola línea, o \verb|align| para ecuaciones de varías 
+líneas\footnote{\texttt{align} funciona para todo tipo de ecuaciones centradas y por consiguiente reemplaza el uso de \texttt{equation}. }.
 Ver un tutorial de AMS-\LaTeX\ para los detalles correspondientes. Para \emph{cualquier} expresión matemática se debe encerrar  \emph{siempre} la expresión matemática entre símbolos de \verb|$...$|.
 Esto se debe hacer incluso en el caso de variables de una sóla letra, tipo $a$ o $x$. Es decir, usando: \verb|$a$| o \verb|$x$|.
 
-Para usar modo texto dentro de modo matemático se recomienda el uso del comando \verb|\text{...}|. En particular, las unidades siempre deben ir en modo texto!. Por ejemplo $1\ \text{s}$, que se obtiene con \verb|$1\ \text{s}$|. Note que la unidad está separada de la cantidad con un espacio en blanco: '\verb|\ |'. Cualquier palabra o acrónimo dentro de una ecuación debe ir en formato texto. Por ejemplo, el área de la Iglesis de Jericó (IJ) se podría denotar con $A_{\text{IJ}}$: \verb|A_{\text{IJ}}|, mientras que $A_{IJ}$: \verb|L_{AB}|, podría ser una matriz con índices $I$ y $J$.
+Para usar modo texto dentro de modo matemático se recomienda el uso del comando \verb|\text{...}|. En particular, ¡las unidades siempre deben ir en modo texto!. Por ejemplo $1\ \text{s}$, que se obtiene con \verb|$1\ \text{s}$|. Note que la unidad está separada de la cantidad con un espacio en blanco: '\verb|\ |'. Cualquier palabra o acrónimo dentro de una ecuación debe ir en formato texto. Por ejemplo, el área de la Iglesis de Jericó (IJ) se podría denotar con $A_{\text{IJ}}$: \verb|A_{\text{IJ}}|, mientras que $A_{IJ}$: \verb|A_{IJ}|, podría ser una matriz con índices $I$ y $J$.
 
 Finalmente, los nombres de las funciones deben ir siempre en modo texto y con el espacio adecuado después del nombre de la función. Esto se consigue automáticamente usando los macros de funciones de \LaTeX\ del tipo: \verb|\sin|, \verb|\cos|, \verb|\exp|, etc. Por ejemplo $x=\exp(\log(x))$  que se consigue con \verb|$x=\exp(\log(x))$|. Si una función no tiene un macro de \LaTeX{} asociado, se puede usar el comando genérico \verb|\operatorname|, como en  $x=\operatorname{e}^{\log x}$: \verb|$x=\operatorname{e}^{\log x}$|.
 
 
 \subsection{Objetos flotantes}
 
-Las tablas y figuras se suelen poner como elementos flotantes en el documento con algún texto explicativo: \verb|\caption{}|. Para el caso de la figura~\ref{fig:detector} se uso:
+Las tablas y figuras se suelen poner como elementos flotantes en el documento con algún texto explicativo: \verb|\caption{}|. Para el caso de la figura~\ref{fig:detector} se usó:
 
 \begin{lstlisting}
 \begin{figure}
     \centering
-    \includegraphics[scale=0.2]{figures/cern_graphic}
-    \caption{Trazas en detectores}
+    \includegraphics[scale=0.2]{type1}
+    \caption{Fichas de Lego}
     \label{fig:detector}
 \end{figure}
 \end{lstlisting}
 
 
-Por lo tanto siempre deben ser referenciadas cuando se discutan dentro del texto, como se ilustra en la figura \ref{fig:detector}. Esto se logra usando el sistema de referencias cruzadas de \LaTeX{} con \verb|\label| y \verb|\ref|. \LaTeX{} determina automáticamente la posición de la figura dentro del texto y como está referenciada no importa que no aparezca inmediatamente después del párrafo donde se referencia. En lo posible las figuras deben ser de tipo vectorial, en formato PDF, para garantizar que escalen bien con cualquier magnificación del documento. 
+Por lo tanto, los objetos flotantes siempre deben ser referenciadas cuando se discutan dentro del texto, como se ilustra en la figura \ref{fig:detector}. Esto se logra usando el sistema de referencias cruzadas de \LaTeX{} con \verb|\label| y \verb|\ref|. \LaTeX{} determina automáticamente la posición del objeto flotante dentro del texto y como está referenciado, no importa que no aparezca inmediatamente después del párrafo donde se referencia. En lo posible, las figuras deben ser de tipo vectorial, en formato PDF, para garantizar que escalen bien con cualquier magnificación del documento. 
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.2]{figures/cern_graphic}
-    \caption{Ilustración de la geometría de los detectores}
+    \includegraphics[scale=0.2]{type1}
+    \caption{Fichas de Lego}
     \label{fig:detector}
 \end{figure}
 
 \section{Recomendaciones finales}
 \begin{itemize}
-\item Organizar los espacios entre ecuaciones y texto entre diferentes párrafos.
 \item Realizar la debida puntuación entre ecuaciones y
 texto para lograr una lectura más fluida. Buscar sinónimos de expresiones
 y verbos conectores para evitar repeticiones dentro del párrafo. A su vez, comprobar
@@ -199,7 +198,7 @@ $ bibtex documento
 $ pdflatex documento 
 $ pdflatex documento 
 \end{lstlisting}
-Estos comandos son realizados automáticamente en las plataformas de \LaTeX\ online como Overleaf o ShareLaTeX. 
+Estos comandos son realizados automáticamente en las plataformas de \LaTeX\ online como Overleaf. 
 Es de anotar que el documento creado con extensión \verb|.bbl| contiene toda la información de las referencias usadas en el documento y es el usualmente requerido por las revistas para su proceso interno de edición. Esto se debe a que la base de datos  bibliográfica (\verb|susy.bib| en nuestro caso)  puede ser reutilizada en otros documentos y por lo tanto termina teniendo muchas más referencias de las que realmente se necesitan en el documento específico.
 
 De este modo, una referencias del tipo: \verb|\cite{Bernal:2015bla}|, cuyo rótulo \verb|Bernal:2015bla| está definido en el archivo \verb|susy.bib|, aparece en el texto de la siguiente manera: \cite{Bernal:2015bla}. Además se genera una sección adicional del documento con la descripción de la referencia correspondiente. Es altamente recomendable obtener las referencias bibliográficas (BibTeX en este caso) desde algún sistema de manejo de referencias para facilitar el proceso de extracción automático de referencias por parte de terceros. En nuestro caso la referencia la obtuvimos desde \href{http://inspirehep.net/record/1338091/export/hx}{\texttt{http://inspire.hep}}. Una vez allí copiamos y pegamos el texto correspondiente:
