@@ -140,14 +140,14 @@ Este  párrafo termina con la siguiente ecuación
 
 Y este es un nuevo párrafo. 
 
-La referencia a una ecuación siempre se debe hacer usando el sistema de refencias cruzadas de \LaTeX{}. A la ecuación a referenciar se le debe asignar un rótulo usando el comando \verb|\label| ilustrado en la ecuación anterior. Para referirse a ella dentro del texto se usa el comando \verb|\eqref| con el correspondiente rótulo asignado, que da lugar a la ecuación~\eqref{eq:bin}, obtenida con \verb|\eqref{eq:bin}|. Se recomienda siempre poner un identificador al rótulo, en el caso anterior es ``\verb|eq:|'', el cual indica un rótulo de ecuación.
+La referencia a una ecuación siempre se debe hacer usando el sistema de referencias cruzadas de \LaTeX{}. A la ecuación a referenciar se le debe asignar un rótulo usando el comando \verb|\label| ilustrado en la ecuación anterior. Para referirse a ella dentro del texto se usa el comando \verb|\eqref| con el correspondiente rótulo asignado, que da lugar a la ecuación~\eqref{eq:bin}, obtenida con \verb|\eqref{eq:bin}|. Se recomienda siempre poner un identificador al rótulo, en el caso anterior es ``\verb|eq:|'', el cual indica un rótulo de ecuación.
 
 \subsection{Modo texto y modo matemático}
 
 El modo texto y el modo matemático usan diferentes estilos de fuentes de caracteres para facilitar la lectura y evitar confusiones. Esto se consigue automáticamente en \LaTeX\ usando siempre los ambientes de ecuaciones centradas tipo \verb|equation| para ecuaciones de una sola línea, o \verb|align| para ecuaciones de varías 
 líneas\footnote{\texttt{align} funciona para todo tipo de ecuaciones centradas y por consiguiente reemplaza el uso de \texttt{equation}. }.
 Ver un tutorial de AMS-\LaTeX\ para los detalles correspondientes. Para \emph{cualquier} expresión matemática se debe encerrar  \emph{siempre} la expresión matemática entre símbolos de \verb|$...$|.
-Esto se debe hacer incluso en el caso de variables de una sóla letra, tipo $a$ o $x$. Es decir, usando: \verb|$a$| o \verb|$x$|.
+Esto se debe hacer incluso en el caso de variables de una sola letra, tipo $a$ o $x$. Es decir, usando: \verb|$a$| o \verb|$x$|.
 
 Para usar modo texto dentro de modo matemático se recomienda el uso del comando \verb|\text{...}|. En particular, ¡las unidades siempre deben ir en modo texto!. Por ejemplo $1\ \text{s}$, que se obtiene con \verb|$1\ \text{s}$|. Note que la unidad está separada de la cantidad con un espacio en blanco: '\verb|\ |'. Cualquier palabra o acrónimo dentro de una ecuación debe ir en formato texto. Por ejemplo, el área de la Iglesia de Jericó (IJ) se podría denotar con $A_{\text{IJ}}$: \verb|A_{\text{IJ}}|, mientras que $A_{IJ}$: \verb|A_{IJ}|, podría ser una matriz con componentes $I$ y $J$.
 
