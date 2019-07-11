@@ -1,0 +1,74 @@
+%%SEE. http://mirrors.ucr.ac.cr/CTAN/macros/latex/contrib/classicthesis/classicthesis-arsclassica.sty
+%% and https://tex.stackexchange.com/a/114166
+\RequirePackage{titlesec}
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\RequirePackage[left=4cm,right=2.5cm,top=2.5cm,bottom=2cm]{geometry}
+\RequirePackage{fancyhdr}
+
+% ********************************************************************
+% PDF and XeLaTeX Stuff
+% ********************************************************************
+\RequirePackage{ifthen}
+\RequirePackage{ifpdf}
+\RequirePackage{ifxetex}
+\RequirePackage{ifluatex}
+
+%------------------Main Font-------------------------
+%\setmainfont{Fira Sans}
+% ********************************************************************
+% Font Stuff
+% ********************************************************************
+\ifthenelse{\boolean{xetex}\OR\boolean{luatex}}
+   { % use fontspec and OpenType fonts with utf8 engines
+     \RequirePackage{fontspec}
+     %\ifthenelse{\boolean{ct@palatino}}% default
+     % {
+         \setmainfont[Ligatures=TeX,Numbers=OldStyle]{TeX Gyre Pagella} % Palatino clone
+         \linespread{1.05} % a bit more for Palatino
+         \RequirePackage{unicode-math}
+         \setmathfont{TeX Gyre Pagella Math}
+     %  }{\relax} % use class' default font
+     %\ifthenelse{\boolean{ct@beramono}}%
+     %  {\setmonofont[Scale=0.85]{DejaVu Sans Mono}} % like Bera; Scale=MatchLowercase
+     %  {\setmonofont[Scale=1]{Latin Modern Mono}}
+     % font for the chapter numbers will be defined in the old way below
+     % because there is no OpenType Euler font; this is how it should be done:
+     %\newfontface\chapterNumber[Scale=7,Color=000000]{TeX Gyre Pagella Bold}
+   }{\RequirePackage[utf8]{inputenc}
+   \relax}
+%   { % use Type 1 fonts with pdflatex
+%   \relax
+%   }
+
+
+%------------------Color Set--------------------------
+\definecolor{LightBlue}{RGB}{66, 163, 251}
+\definecolor{DarkBlue}{RGB}{36, 100, 176}
+\definecolor{LightGray}{gray}{.94}
+\definecolor{DarkGray}{gray}{.172}
+\definecolor{Orange}{RGB}{229, 133, 3}
+\definecolor{MediumBlue}{RGB}{38, 119, 193}
+
+%------------------Section Default Setting-------------
+%\titleformat*{\section}{\color{DarkBlue}\normalfont\bfseries\Huge}
+%\titleformat*{\subsection}{\color{LightBlue}\normalfont\bfseries\LARGE}
+%\titleformat*{\subsubsection}{\color{MediumBlue}\normalfont\bfseries\LARGE}
+
+%-------------------Section Numbers Removal------------
+%\setcounter{secnumdepth}{0}
+
+
+%-------------------------Header & Footer------------------------
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{
+\begin{tikzpicture}[remember picture,overlay] \node[anchor=north west, yshift=1.5mm, xshift=-1.5mm] at (current page.north west) {\includegraphics[height=25mm]{figures/header_corner.png}};
+\end{tikzpicture}
+}
+\fancyfoot[C]{
+\begin{tikzpicture}[remember picture,overlay] \node[anchor=south east, yshift=-1.5mm, xshift=1.5mm] at (current page.south east) {\includegraphics[height=29mm]{figures/banner.png}};
+\end{tikzpicture}
+\textcolor{LightGray}{\thepage}
+}
