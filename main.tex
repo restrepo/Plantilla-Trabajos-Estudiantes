@@ -19,6 +19,23 @@
 }
 \date{\small Octubre 13, 2017}
 \begin{document}
+\lstset{language=[LaTeX]TeX
+%,showspaces=false
+%{\small Hola} {\footnotesize Hola} {\scriptsize Hola} {\tiny Hola}
+,basicstyle=\ttfamily
+,showstringspaces=false
+,keywordstyle=\color{blue}
+,commentstyle=\normalfont\ttfamily\color{red}
+,stringstyle=\color{Green}
+,inputencoding=utf8
+,extendedchars=false
+%,framexleftmargin=2mm 
+%,frame=shadowbox 
+%,rulexsepcolor=\color{blue}
+}
+
+
+
 \maketitle
 
 \begin{abstract}
@@ -74,14 +91,14 @@ Esto se consigue en \LaTeX\ automáticamente al separar los párrafos con una o 
 
 Las ecuaciones centradas hacen parte del párrafo y deben llevar los signos de puntuación apropiados. Se recomienda dejar un espacio pequeño, del tipo \verb|\,| antes del signo de puntuación de la ecuación, cuando la ecuación no termine en paréntesis u otros signos de agrupación. Por ejemplo:
 \begin{lstlisting}
-El siguiente párrafo contiene la siguiente ecuación
+El siguiente p\'arrafo contiene la siguiente ecuaci\'on
 \begin{equation}
   \label{eq:1}
   y=x\,,
 \end{equation}
-la cual se sigue discutiendo aquí.
+la cual se sigue discutiendo aqu\'\i.
 
-Y este es un nuevo párrafo.
+Y este es un nuevo p\'arrafo.
 \end{lstlisting}
 El resultado es:
 
@@ -126,7 +143,7 @@ El modo texto y el modo matemático usan diferentes estilos de texto para facili
 Ver un tutorial de AMS-\LaTeX\ para los detalles correspondientes. Para \emph{cualquier} expresión matemática se debe encerrar  \emph{siempre} la expresión matemática entre símbolos de \verb|$...$|.
 Esto se debe hacer incluso en el caso de variables de una sóla letra, tipo $a$ o $x$. Es decir, usando: \verb|$a$| o \verb|$x$|.
 
-Para usar modo texto dentro de modo matemático se recomienda el uso del comando \verb|\text{...}|. En particular, las unidades siempre deben ir en modo texto!. Por ejemplo $1\ \text{s}$, que se obtiene con \verb|$1\ \text{s}$|. Note que la unidad está separada de la cantidad con un espacio en blanco: '\verb|\ |'. Cualquier palabra o acrónimo dentro de una ecuación debe ir en formato texto. Por ejemplo, la longitud de un alambre blanco (AB) se podría denotar con $L_{\text{AB}}$: \verb|L_{\text{AB}}|, mientras que $L_{AB}$: \verb|L_{AB}|, podría ser una matriz con índices $A$ y $B$.
+Para usar modo texto dentro de modo matemático se recomienda el uso del comando \verb|\text{...}|. En particular, las unidades siempre deben ir en modo texto!. Por ejemplo $1\ \text{s}$, que se obtiene con \verb|$1\ \text{s}$|. Note que la unidad está separada de la cantidad con un espacio en blanco: '\verb|\ |'. Cualquier palabra o acrónimo dentro de una ecuación debe ir en formato texto. Por ejemplo, el área de la Iglesis de Jericó (IJ) se podría denotar con $A_{\text{IJ}}$: \verb|A_{\text{IJ}}|, mientras que $A_{IJ}$: \verb|L_{AB}|, podría ser una matriz con índices $I$ y $J$.
 
 Finalmente, los nombres de las funciones deben ir siempre en modo texto y con el espacio adecuado después del nombre de la función. Esto se consigue automáticamente usando los macros de funciones de \LaTeX\ del tipo: \verb|\sin|, \verb|\cos|, \verb|\exp|, etc. Por ejemplo $x=\exp(\log(x))$  que se consigue con \verb|$x=\exp(\log(x))$|. Si una función no tiene un macro de \LaTeX{} asociado, se puede usar el comando genérico \verb|\operatorname|, como en  $x=\operatorname{e}^{\log x}$: \verb|$x=\operatorname{e}^{\log x}$|.
 
@@ -139,7 +156,7 @@ Las tablas y figuras se suelen poner como elementos flotantes en el documento co
 \begin{figure}
     \centering
     \includegraphics[scale=0.2]{figures/cern_graphic}
-    \caption{Ilustración de la geometría de los detectores}
+    \caption{Trazas en detectores}
     \label{fig:detector}
 \end{figure}
 \end{lstlisting}

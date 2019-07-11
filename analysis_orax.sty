@@ -30,8 +30,12 @@
          \setmathfont{TeX Gyre Pagella Math}
      %  }{\relax} % use class' default font
      %\ifthenelse{\boolean{ct@beramono}}%
-     %  {\setmonofont[Scale=0.85]{DejaVu Sans Mono}} % like Bera; Scale=MatchLowercase
-     %  {\setmonofont[Scale=1]{Latin Modern Mono}}
+     %  {
+       \setmonofont[Scale=0.85]{Fira Mono}
+   %} % like Bera; Scale=MatchLowercase
+     %  {
+      %\setmonofont[Scale=1]{Latin Modern Mono}
+   %}
      % font for the chapter numbers will be defined in the old way below
      % because there is no OpenType Euler font; this is how it should be done:
      %\newfontface\chapterNumber[Scale=7,Color=000000]{TeX Gyre Pagella Bold}
